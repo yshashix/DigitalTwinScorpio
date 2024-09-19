@@ -39,9 +39,11 @@ lint: requirements-dev.txt
 
 setup: requirements.txt setup-dev
 	$(PIP) install -r requirements.txt
+	bash sqlite3-pcre2.sh
+	rm -rf sqlite3-pcre2
 	echo ".headers on" > ~/.sqliterc
 	echo ".mode column" >> ~/.sqliterc
-	echo ".load /usr/lib/sqlite3/pcre.so" >> ~/.sqliterc
+	echo ".load /usr/lib/sqlite3/pcre2.so" >> ~/.sqliterc
 
 
 

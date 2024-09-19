@@ -354,7 +354,7 @@ def send(results, attribute, entityId, dryrun, port):
         # Send over mqtt/device-agent
 
         payload.append(f'{{ "n": "{attribute}",\
-"v": "{value.toPython()}", "t": "{prefix}", "i": "{entityId}"}}')
+"v": "{value.toPython()}", "t": "{prefix}", "i": "{entityId}"}}')  # noqa: E201, E231
     payloads = f'[{",".join(payload)}]'
     if not dryrun:
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

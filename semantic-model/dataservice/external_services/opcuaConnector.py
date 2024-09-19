@@ -44,7 +44,7 @@ async def get_node(client, map):
         namespace = ns_part.split('=')[1]
     nsidx = await client.get_namespace_index(namespace)
     print(f"Retrieved namespace idx {nsidx}")
-    nodeid = f'ns={nsidx};{i_part}'
+    nodeid = f'ns={nsidx};{i_part}'  # noqa: E702, E231
     print(f"Requesting {nodeid}")
     var = client.get_node(nodeid)
     return var

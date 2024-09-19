@@ -2,24 +2,27 @@
 
 ## Requirements
 
-- You need to have Python > 3.8
+- You need to have Python  3.10
 - Virtualenv needs to be installed
-- `sqlite3` and `sqlite3-pcre` need to be installed
+- `sqlite3` and `pcre2` need to be installed
 
   ```bash
-  sudo  apt install sqlite3 sqlite3-pcre
+  sudo  apt install sqlite3 libsqlite3-dev libpcre2-dev
   ```
 
 ## Installation
 
+Install miniconda and create python3.10 version environment
 ```bash
-python -m venv venv
+bash pyenv_setup.sh
+conda create -n py310 python=3.10 -y
 ```
 
-Everytime you are starting a new shell you need to enable the Virtual Environment:
+Everytime you are starting a new shell you need to enable the miniconda Virtual Environment which runs python 3.10:
 
 ```bash
-source venv/bin/activate
+source ~/miniconda3/bin/activate
+conda activate py310
 make setup
 ```
 
